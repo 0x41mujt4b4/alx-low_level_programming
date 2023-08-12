@@ -7,7 +7,9 @@
  */
 int main(void)
 {
-	for(int x = 0; x <= 15; x++)
+	int x;
+
+	for(x = 0; x <= 15; x++)
 	{
 		if (x > 9)
 		putchar(87+x);
