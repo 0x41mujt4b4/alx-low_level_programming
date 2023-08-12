@@ -9,9 +9,10 @@ int main(void)
 {
 	int x;
 
-	for(x = 'A'; x <= 'Z'; x++)
+	for (x = 'A'; x <= 'Z'; x++)
 	{
 		int lower_x = tolower(x);
+
 		if (lower_x != 'q' && lower_x != 'e')
 		{
 		putchar(lower_x);
