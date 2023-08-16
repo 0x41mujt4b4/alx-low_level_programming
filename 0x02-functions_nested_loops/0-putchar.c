@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "main.h"
 /* more headers goes there */
 
@@ -9,7 +8,8 @@
  * Return: Always 0 (Success)
  */
 
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
+int main(){
+	char* c = "_putchar\n";
+	while (*c) _putchar(*c++);
+	return 0;
 }
