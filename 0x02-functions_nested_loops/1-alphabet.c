@@ -3,16 +3,14 @@
 
 /* betty style doc for function main goes there */
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * print_alphabet - print the alphabets lower case
+ * Description: 'print the alphabet in lower case'
+ * Return: void
  */
-
-int main(void)
+void print_alphabet(void)
 {
 	char *c = "abcdefghijklmnopqrstuvwxyz\n";
 
 	while (*c)
 		_putchar(*c++);
-	return (0);
 }
