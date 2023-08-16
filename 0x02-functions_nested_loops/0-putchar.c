@@ -8,11 +8,12 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{i
-	putchar();
+{
+	_putchar();
 	return (0);
 }
 
-int putchar(){
+int _putchar(){
 	puts("_putchar");
+	return 0;
 }
