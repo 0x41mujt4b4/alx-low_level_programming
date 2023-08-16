@@ -1,11 +1,10 @@
 #include "main.h"
-/* more headers goes there */
 
 /* betty style doc for function main goes there */
 /**
  * _abs - get abslute value
  * @n: integer
- * Return: integer 
+ ** Return: integer
  */
 int _abs(int n)
 {
