@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
@@ -8,7 +8,11 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{
-	puts("_putchar");
+{i
+	putchar();
 	return (0);
+}
+
+int putchar(){
+	puts("_putchar");
 }
