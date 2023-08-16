@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "main.h"
 /* more headers goes there */
 
