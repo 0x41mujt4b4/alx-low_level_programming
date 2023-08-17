@@ -1,16 +1,19 @@
-#include "main.h"
-/* more headers goes there */
+#include "holberton.h"
 
-/* betty style doc for function main goes there */
 /**
- * print_alphabet - print the alphabets lower case
- * Description: 'print the alphabet in lower case'
- * Return: void
- */
+  * print_alphabet - Make the alphabet
+  *
+  * Return: void
+  */
 void print_alphabet(void)
 {
-	char *c = "abcdefghijklmnopqrstuvwxyz\n";
+	char c;
 
-	while (*c)
-		_putchar(*c++);
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		_putchar(c);
+	}
+
+	_putchar('\n');
 }
+
