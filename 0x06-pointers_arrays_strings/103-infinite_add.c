@@ -1,61 +1,47 @@
-nclude <stdio.h>
-#include <string.h>
-
+#include <stdio.h>
+#include "main.h"
+/**
+ ** infinite_add - adds two numbers
+ ** @n1: first number
+ ** @n2: second number
+ ** @r: buffer for result
+ ** @size_r: buffer size
+ **
+ ** Return: address of r or 0
+ **/
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-			int i, j, k, l, m, n;
-				int carry = 0;
-					int val_n1, val_n2, sum;
+	int i, j, k, l, m, n;
 
-						i = strlen(n1) - 1;
-							j = strlen(n2) - 1;
-								k = 0;
-
-									while (i >= 0 || j >= 0)
-												{
-																if (k >= size_r - 1)
-																				{
-																									return (0);
-																											}
-
-																		val_n1 = i >= 0 ? n1[i] - '0' : 0;
-																				val_n2 = j >= 0 ? n2[j] - '0' : 0;
-
-																						sum = val_n1 + val_n2 + carry;
-																								r[k] = sum % 10 + '0';
-																										carry = sum / 10;
-
-																												i--;
-																														j--;
-																																k++;
-																																	}
-
-										if (carry && k < size_r - 1)
-													{
-																	r[k] = carry + '0';
-																			k++;
-																				}
-
-											if (k == size_r - 1)
-														{
-																		return (0);
-																			}
-
-												r[k] = '\0';
-
-													l = 0;
-														m = k - 1;
-
-															while (l < m)
-																		{
-																						n = r[l];
-																								r[l] = r[m];
-																										r[m] = n;
-
-																												l++;
-																														m--;
-																															}
-
-																return (r);
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	{
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
+		}
+		m = n / 10;
+		r[k] = n % 10 + '0';
+	}
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
+	}
+	return (r);
 }
-
