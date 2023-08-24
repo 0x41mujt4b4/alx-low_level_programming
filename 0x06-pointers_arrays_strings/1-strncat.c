@@ -3,6 +3,7 @@
  * _strncat - concat two strings
  * @dest: first string
  * @src: second string
+ * @n: use most n bytes from src
  * Return: pointer to the concated string
  */
 char *_strncat(char *dest, char *src, int n)
