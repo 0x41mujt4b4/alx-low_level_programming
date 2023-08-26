@@ -1,5 +1,5 @@
-#include <stdio>
-#include <main.h>
+#include <stdio.h>
+#include "main.h"
 
 /**
  * isInt - check whether char is int
