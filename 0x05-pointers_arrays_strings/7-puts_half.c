@@ -17,7 +17,8 @@ void puts_half(char *str)
 	}
 	if (i % 2)
 		i = (i - 1) / 2;
-	i /= 2;
+	else
+		i /= 2;
 	while (*(str + i))
 	{
 		printf("%c", *(str + i));
