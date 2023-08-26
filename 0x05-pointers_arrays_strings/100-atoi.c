@@ -36,7 +36,11 @@ int _atoi(char *s)
 		int n = 0;
 
 		while (!isInt(s[i]))
+		{
+			if (s[i] == '\0')
+				return (0);
 			i++;
+		}
 
 		if (isSign(s[i - 1]))
 			sign = isSign(s[i - 1]);
