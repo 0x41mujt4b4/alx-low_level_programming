@@ -13,10 +13,10 @@ void print_rev(char *s)
 
 	while (*(s + i))
 		i++;
-	while (i + 1)
+	while (i)
 	{
 		printf("%c", *(s + i));
 		i--;
 	}
-	puts('\n');
+	printf("%c\n", *(s + i));
 }
