@@ -39,11 +39,10 @@ int _atoi(char *s)
 		{
 			if (s[i] == '\0')
 				return (0);
+			if (isSign(s[i]))
+				sign = sign * isSign(s[i]);
 			i++;
 		}
-
-		if (isSign(s[i - 1]))
-			sign = isSign(s[i - 1]);
 
 		while (isInt(s[i]))
 		{
