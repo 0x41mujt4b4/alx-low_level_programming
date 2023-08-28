@@ -12,8 +12,10 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *p = haystack;
-	int len = _strlen(needle);
+	int len = 0;
 
+	while (needle[len])
+		len++;
 	while ((p = _strchr(p, *needle)) != NULL)
 	{
 		if (_strncmp(p, needle, len) == 0)
