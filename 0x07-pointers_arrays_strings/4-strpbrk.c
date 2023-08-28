@@ -1,48 +1,35 @@
 #include <stdio.h>
 #include "main.h"
-/**
- ** _strchr - convert
- **
- ** @s: string to search
- ** @c: character to locate
- **
- ** Return: pointer
- **/
-char *_strchr(char *s, char c)
-{
-	int i = 0;
-	char *ptr = NULL;
-
-	while (s[i])
-		if (s[i++] == c)
-		{
-			ptr = &s[i];
-			break;
-		}
-	return (ptr);
-}
 
 /**
- * _strpbrk - ''
- *
- * @s: string to be scanned
- * @accept: string containing the characters to match
- *
- * Return: pointer to first matching
- */
+  * _strpbrk - search a string for any of a set of bytes
+  * @s: source string
+  * @accept: accepted characters
+  *
+  * Return: the string since the first found accepted character
+  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i = 0;
-	char *ptr;
+	int a = 0, b;
 
-	while (s[i])
+	while (s[a])
 	{
-		if (_strchr(accept, s[i]))
+		b = 0;
+
+		while (accept[b])
 		{
-			ptr = &s[i];
-			break;
+			if (s[a] == accept[b])
+			{
+				s += a;
+				return (s);
+			}
+
+			b++;
 		}
-		i++;
+
+		a++;
 	}
-	return (ptr);
+
+	return ('\0');
 }
+
