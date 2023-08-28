@@ -2,28 +2,36 @@
 #include "main.h"
 
 /**
- * _strstr - ''
- *
- * @haystack: string to be scanned
- * @needle: string containing the characters to match
- *
- * Return: pointer to first matching
- */
+  * _strstr - locate a substring
+  * @haystack: the string to search
+  * @needle: the string to find
+  *
+  * Return: char value
+  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *p = haystack;
-	int len = 0;
+	int a = 0, b = 0;
 
-	while (needle[len])
-		len++;
-	while ((p = _strchr(p, *needle)) != NULL)
+	while (haystack[a])
 	{
-		if (_strncmp(p, needle, len) == 0)
+		while (needle[b])
 		{
-			return (p);
+			if (haystack[a + b] != needle[b])
+			{
+				break;
+			}
+
+			b++;
 		}
-		p++;
+
+		if (needle[b] == '\0')
+		{
+			return (haystack + a);
+		}
+
+		a++;
 	}
 
-	return (NULL);
+	return ('\0');
 }
+
