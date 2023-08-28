@@ -11,20 +11,17 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, tmp = 0;
-	char *ptr;
+	char *p = haystack;
+	int len = _strlen(needle);
 
-	for (j = 0; haystack[j] != '\0'; j++)
+	while ((p = _strchr(p, *needle)) != NULL)
 	{
-		tmp = j;
-		while ((haystack[tmp++] == needle[i++]) && needle[i])
-		;
-		if (needle[i] == '\0')
+		if (_strncmp(p, needle, len) == 0)
 		{
-			ptr = &haystack[j];
-			break;
+			return (p);
 		}
-		i = 0;
+		p++;
 	}
-	return (ptr);
+
+	return (NULL);
 }
