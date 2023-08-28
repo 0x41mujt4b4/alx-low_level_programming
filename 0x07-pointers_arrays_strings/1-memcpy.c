@@ -4,7 +4,7 @@
 /**
  * _memcpy - convert
  *
- * dest: string to be filled
+ * @dest: string to be filled
  * @src: byte to fill
  * @n: number of bytes to fill
  *
