@@ -12,12 +12,12 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *p;
+	char *p;
 	unsigned int bytes, i;
 
 	if (!size || !nmemb)
 		return (NULL);
-	bytes = nmemb * size
+	bytes = nmemb * size;
 	p = malloc(bytes);
 	if (!p)
 		return (NULL);
