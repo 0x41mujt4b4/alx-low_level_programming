@@ -50,10 +50,10 @@ int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 	int i = 0, i1 = len_1 - 1;
 	int i2, product, carry, digit, *mul_result, *sum_result;
 
-	sum_result = _calloc(sizeof(int), (len_r));
+	sum_result = calloc(sizeof(int), (len_r));
 	while (i < len_1)
 	{
-		mul_result = _calloc(sizeof(int), len_r);
+		mul_result = calloc(sizeof(int), len_r);
 		i2 = len_2 - 1, digit = (len_r - 1 - i);
 		if (!is_digit(num1[i1]))
 			return (NULL);
