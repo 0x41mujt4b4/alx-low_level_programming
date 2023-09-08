@@ -1,26 +1,44 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
-
 /**
- * string_nconcat - concatinate two string
+ * string_nconcat - function that concatenates two strings.
  *
- * @s1: the first string
- * @s2: the second string
- * @n: the number of chars to concat form s2
+ * @s1: This is the first input string
+ * @s2: This is the second input string
+ * @n: This is the limit to copy the second string to the first string
  *
- * Return: a pointer to concated string
+ * Return: This is the string joined
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, length = 0;
-	char *s = malloc(sizeof(s1) + n);
+	unsigned int a, b;
+	char *newString;
 
-	if (s1)
-	for (; s1[length] != '\0'; length++)
-		s[length] = s1[length];
-	if (s2)
-	for (; i < n && s2[i] != '\0'; i++, length++)
-		s[length] = s2[i];
-	return (s);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	for (a = 0; s1[a] != '\0'; a++)
+	{
+	}
+	for (b = 0; s2[b] != '\0'; b++)
+	{
+	}
+	if (n > b)
+		n = b;
+	newString = malloc(((a + n) + 1));
+	if (newString == NULL)
+		return (NULL);
+	for (a = 0; s1[a] != '\0'; a++)
+	{
+		newString[a] = s1[a];
+	}
+	for (b = 0; b != n; b++)
+	{
+		newString[a] = s2[b];
+		a++;
+	}
+	newString[a] = '\0';
+	return (newString);
 }
