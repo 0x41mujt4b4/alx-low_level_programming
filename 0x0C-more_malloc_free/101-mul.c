@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
+#include <string.h>
 
 /**
  * add_arrays - adds 2 arrays of ints
@@ -108,7 +108,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	len_1 = str_len(argv[1]), len_2 = str_len(argv[2]);
+	len_1 = strlen(argv[1]), len_2 = strlen(argv[2]);
 	len_r = len_1 + len_2;
 	if (len_1 < len_2)
 		num1 = argv[1], num2 = argv[2];
