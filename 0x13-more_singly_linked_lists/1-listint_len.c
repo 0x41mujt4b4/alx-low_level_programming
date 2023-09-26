@@ -1,11 +1,11 @@
 #include "lists.h"
 /**
- * print_listint - This function print int in every position
+ * listint_len - This function return to the number of nudes
  * @h: This is my structure entry
  * Return: This return to the number the nodes
  *
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	unsigned int count = 0;
 
@@ -13,9 +13,10 @@ size_t print_listint(const listint_t *h)
 		return (0);
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
 		count += 1;
 		h = h->next;
 	}
 	return (count);
 }
+
+
