@@ -12,11 +12,11 @@ int main(void)
 
     n = binary_to_uint("1");
     printf("%u\n", n);
-    n = binary_to_uint("101");
+    n = binary_to_uint("0001");
     printf("%u\n", n);
-    n = binary_to_uint("1e01");
+    n = binary_to_uint("10");
     printf("%u\n", n);
-    n = binary_to_uint("1100010");
+    n = binary_to_uint("000");
     printf("%u\n", n);
     n = binary_to_uint("0000000000000000000110010010");
     printf("%u\n", n);
