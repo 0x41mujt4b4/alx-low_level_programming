@@ -11,6 +11,7 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int bit = (n >> index) & 1;
-	return (bit ? bit == 1 || bit == 0 : -1);
+	if (index >= 0 && index < 64)
+		return ((n >> index) & 1);
+	return (-1);
 }
