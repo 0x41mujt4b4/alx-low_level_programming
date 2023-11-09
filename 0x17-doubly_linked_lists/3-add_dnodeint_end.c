@@ -2,20 +2,28 @@
 #include "lists.h"
 
 /**
- * dlistint_len - return len of linked list
+ * add_dnodeint_end - add node at the end
  *
- * @h: the linked list
+ * @head: the linked list
+ * @n: the value of the node
  *
  * Return: number of nodes
  */
-size_t dlistint_len(const dlistint_t *h)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	size_t number_of_nodes = 0;
+	dlistint_t *new;
+	dlistint_t *current = *head;
 
-	while (h)
-	{
-		h = h->next;
-		number_of_nodes++;
-	}
-	return (number_of_nodes);
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+		return (NULL);
+	new->n = n;
+	new->next = NULL;
+
+	while (current->next)
+		current = current->next;
+	current->next = new;
+	new->prev = current;
+	current = new;
+	return (new);
 }
